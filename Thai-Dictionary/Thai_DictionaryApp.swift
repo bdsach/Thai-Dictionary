@@ -11,7 +11,7 @@ import SwiftUI
 struct Thai_DictionaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
