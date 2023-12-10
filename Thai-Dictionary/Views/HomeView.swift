@@ -25,11 +25,10 @@ struct HomeView: View {
                     Label("คำศัพท์ทั้งหมด", systemImage: "list.bullet")
                 }
             
-            // MARK: - TODO
-//            BookmarkView()
-//                .tabItem {
-//                    Label("บุ๊คมาร์ก", systemImage: "bookmark")
-//                }
+            BookmarkView()
+                .tabItem {
+                    Label("บุ๊คมาร์ก", systemImage: "bookmark")
+                }
         }
          
         

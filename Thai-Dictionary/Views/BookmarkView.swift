@@ -9,9 +9,14 @@ import SwiftUI
 
 struct BookmarkView: View {
     var body: some View {
-        NavigationView(content: {
-            NavigationLink(destination: Text("Destination")) { Text("Navigate") }
-        })
+        NavigationView {
+            HStack {
+                Image(systemName: "bookmark.slash.fill")
+                Text("ยังไม่มีบุ๊คมาร์ก")
+            }
+            .navigationTitle("บุ๊คมาร์ก")
+            
+        }
     }
 }
 
