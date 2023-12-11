@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 class AllWordsViewModel: ObservableObject {
     
@@ -141,6 +142,16 @@ class AllWordsViewModel: ObservableObject {
         }
         .resume()
         
+    }
+    
+    func speak(_ text: String) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "th-TH")
+        utterance.rate = 0.4
+        
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+
     }
 }
 

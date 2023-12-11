@@ -17,13 +17,13 @@ struct DetailView: View {
             HStack {
                 Text(vocab)
                     .font(.system(size: 40).bold())
-//                Button(action: {
-//                    
-//                }, label: {
-//                    Image(systemName: "speaker.wave.3.fill")
-//                        .font(.title)
-//                        .foregroundStyle(.blue)
-//                })
+                Button(action: {
+                    vm.speak(vocab)
+                }, label: {
+                    Image(systemName: "speaker.wave.3.fill")
+                        .font(.title)
+                        .foregroundStyle(.blue)
+                })
             }
             .padding(.bottom, 10)
 
