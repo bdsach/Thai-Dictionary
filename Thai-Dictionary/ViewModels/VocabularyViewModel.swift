@@ -67,6 +67,7 @@ class AllWordsViewModel: ObservableObject {
         "ก้นกบ",
     ]
     
+    @Published var bookmark: [String] = ["กงวาน"]
     @Published var data: [WordElement]?
     @Published var wordByCharacter: WordByCharacter?
     
@@ -152,6 +153,11 @@ class AllWordsViewModel: ObservableObject {
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
 
+    }
+    
+    func addBookmark(_ vocab: String) {
+        bookmark.append(vocab)
+        print("DEBUG:--\(bookmark)")
     }
 }
 
