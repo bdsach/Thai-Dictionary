@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Thai_DictionaryApp: App {
+    @StateObject var viewModel = VocabularyViewModel()
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(viewModel)
         }
     }
 }

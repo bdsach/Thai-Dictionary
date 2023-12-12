@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @ObservedObject var vm = AllWordsViewModel()
+    @EnvironmentObject private var vm: VocabularyViewModel
     @State var isDetailViewActive = false
     @State var searchText = ""
     
@@ -36,7 +36,7 @@ struct SearchView: View {
                         isDetailViewActive.toggle()
                     }
                 NavigationLink(
-                                    destination: DetailView(vocab: searchText),
+                    destination: DetailView(vocab: searchText),
                                     isActive: $isDetailViewActive
                                 ) {
                                     EmptyView()

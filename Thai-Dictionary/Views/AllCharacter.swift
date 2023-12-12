@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AllCharacter: View {
-    @ObservedObject private var vm = AllWordsViewModel()
+    @EnvironmentObject private var vm: VocabularyViewModel
     
     var body: some View {
         NavigationView(content: {
@@ -34,10 +34,8 @@ struct AllCharacter: View {
 }
 
 struct DetailCharacter: View {
-    @ObservedObject private var vm = AllWordsViewModel()
+    @EnvironmentObject var vm: VocabularyViewModel
     @State var character: String
-    
-    
     
     var body: some View {
         List {

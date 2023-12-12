@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var search = ""
+    @EnvironmentObject private var vm: VocabularyViewModel
     var body: some View {
         TabView {
             SearchView()

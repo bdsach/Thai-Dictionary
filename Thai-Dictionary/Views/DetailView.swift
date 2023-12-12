@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @State var vocab: String
-    @ObservedObject private var vm = AllWordsViewModel()
+    @EnvironmentObject private var vm: VocabularyViewModel
     
     var body: some View {
         
@@ -24,6 +24,16 @@ struct DetailView: View {
                         .font(.title)
                         .foregroundStyle(.blue)
                 })
+                Button(action: {
+                    withAnimation {
+                        vm.addBookmark(vocab)
+                    }
+                    
+                }, label: {
+                    Image(systemName: vm.isVocabBookmark(vocab) ? "bookmark.fill" : "bookmark")
+                        .font(.title)
+                        .foregroundStyle(.blue)
+                })
             }
             .padding(.bottom, 10)
 
@@ -31,7 +41,10 @@ struct DetailView: View {
                 VStack(spacing: 18) {
                     if let detail = vm.data {
                         ForEach(detail, id: \.id) { item in
-                            DetailBodyView(item: item, vocab: $vocab)
+                            VStack {
+                                DetailBodyView(item: item, vocab: $vocab)
+                            }
+                            
                         }
                     }
                 }
@@ -53,6 +66,7 @@ struct DetailView: View {
 
 #Preview {
     DetailView(vocab: "ความ")
+        .environmentObject(VocabularyViewModel())
 }
 
 struct DetailBodyView: View {

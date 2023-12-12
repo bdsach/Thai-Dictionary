@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-class AllWordsViewModel: ObservableObject {
+class VocabularyViewModel: ObservableObject {
     
     let thaiAlphabet: [Alphabet] = [
         Alphabet(icon: "🐓", character: "ก"),
@@ -67,7 +67,7 @@ class AllWordsViewModel: ObservableObject {
         "ก้นกบ",
     ]
     
-    @Published var bookmark: [String] = ["กงวาน"]
+    @Published var bookmarks: [String] = ["ความชอบ"]
     @Published var data: [WordElement]?
     @Published var wordByCharacter: WordByCharacter?
     
@@ -156,8 +156,21 @@ class AllWordsViewModel: ObservableObject {
     }
     
     func addBookmark(_ vocab: String) {
-        bookmark.append(vocab)
-        print("DEBUG:--\(bookmark)")
+        if !bookmarks.contains(vocab) {
+            bookmarks.append(vocab)
+        } else {
+            bookmarks.removeAll { value in
+                value == vocab
+            }
+        }
+    }
+    
+    func removeBookmark(at index: IndexSet) {
+        bookmarks.remove(atOffsets: index)
+    }
+    
+    func isVocabBookmark(_ vocab: String ) -> Bool {
+        return bookmarks.contains(vocab)
     }
 }
 

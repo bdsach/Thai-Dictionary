@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllWordsView: View {
     @State private var keyword = ""
-    @ObservedObject private var vm = AllWordsViewModel()
+    @EnvironmentObject private var vm: VocabularyViewModel
     
     var body: some View {
 

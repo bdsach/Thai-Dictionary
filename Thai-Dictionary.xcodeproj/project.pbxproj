@@ -13,7 +13,7 @@
 		12B1711F2B21BDC300708631 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B1711E2B21BDC300708631 /* Preview Assets.xcassets */; };
 		12B171262B21BDF600708631 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B171252B21BDF600708631 /* DetailView.swift */; };
 		12B171282B21CA1200708631 /* AllWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B171272B21CA1200708631 /* AllWordsView.swift */; };
-		12B1712B2B21CC1A00708631 /* AllWordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1712A2B21CC1A00708631 /* AllWordsViewModel.swift */; };
+		12B1712B2B21CC1A00708631 /* VocabularyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1712A2B21CC1A00708631 /* VocabularyViewModel.swift */; };
 		12B1712E2B21D32500708631 /* VocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1712D2B21D32500708631 /* VocabularyModel.swift */; };
 		12BAF77E2B22D77E00AA38D0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAF77D2B22D77E00AA38D0 /* SearchView.swift */; };
 		12BAF7802B22EBC300AA38D0 /* AllCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BAF77F2B22EBC300AA38D0 /* AllCharacter.swift */; };
@@ -28,7 +28,7 @@
 		12B1711E2B21BDC300708631 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12B171252B21BDF600708631 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		12B171272B21CA1200708631 /* AllWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordsView.swift; sourceTree = "<group>"; };
-		12B1712A2B21CC1A00708631 /* AllWordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordsViewModel.swift; sourceTree = "<group>"; };
+		12B1712A2B21CC1A00708631 /* VocabularyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewModel.swift; sourceTree = "<group>"; };
 		12B1712D2B21D32500708631 /* VocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyModel.swift; sourceTree = "<group>"; };
 		12BAF77D2B22D77E00AA38D0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		12BAF77F2B22EBC300AA38D0 /* AllCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharacter.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		12B171292B21CBEA00708631 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				12B1712A2B21CC1A00708631 /* AllWordsViewModel.swift */,
+				12B1712A2B21CC1A00708631 /* VocabularyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				12B171282B21CA1200708631 /* AllWordsView.swift in Sources */,
 				12B171182B21BDC300708631 /* Thai_DictionaryApp.swift in Sources */,
 				12B171262B21BDF600708631 /* DetailView.swift in Sources */,
-				12B1712B2B21CC1A00708631 /* AllWordsViewModel.swift in Sources */,
+				12B1712B2B21CC1A00708631 /* VocabularyViewModel.swift in Sources */,
 				12BAF7822B23090300AA38D0 /* BookmarkView.swift in Sources */,
 				12B1712E2B21D32500708631 /* VocabularyModel.swift in Sources */,
 				12BAF7802B22EBC300AA38D0 /* AllCharacter.swift in Sources */,
