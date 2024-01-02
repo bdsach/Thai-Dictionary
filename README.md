@@ -21,7 +21,7 @@ Include a few screenshots or GIFs showcasing the different screens of your app. 
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/thai-dictionary-app.git
+git clone https://github.com/bdsach/Thai-Dictionary-App
 ```
 
 2. Open the project in Xcode.
