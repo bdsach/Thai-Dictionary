@@ -31,3 +31,6 @@ Explore Thai language words effortlessly. With an intuitive user interface.
 
 - Loading State
 - All words Screen
+
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+](https://github.com/bdsach/Thai-Dictionary-App)
