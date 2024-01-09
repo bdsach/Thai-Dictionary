@@ -20,11 +20,11 @@ Explore Thai language words effortlessly. With an intuitive user interface.
 - Alphabetical Navigation: Navigate through the Thai alphabet from ก to ฮ on the Alphabet Screen to find words more efficiently.
 - Words By Alphabet: Explore a list of words organized alphabetically for quick reference.
 - Detailed Information: Access detailed information about each word on the Detail Screen, including definitions, usage, and related information.
+- MVVM Pattern
 
 ## Technology
 
 - SwiftUI
-- MVVM Pattern
 - Networking with URLSession
 
 ## TODO
