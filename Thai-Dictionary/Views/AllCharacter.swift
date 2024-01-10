@@ -39,6 +39,9 @@ struct DetailCharacter: View {
     
     var body: some View {
         List {
+            if vm.isBusy {
+                ProgressView()
+            }
             if let wordByCharacter = vm.wordByCharacter {
                 ForEach(wordByCharacter, id: \.self) { item in
                     NavigationLink {
@@ -57,5 +60,6 @@ struct DetailCharacter: View {
         .onAppear(perform: {
             vm.findByCharacter(character: character)
         })
+        
     }
 }

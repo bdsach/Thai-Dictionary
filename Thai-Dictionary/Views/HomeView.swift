@@ -21,7 +21,7 @@ struct HomeView: View {
                     Label("คำศัพท์ตามอักษร", systemImage: "character.book.closed.fill.th")
                 }
             
-            AllWordsView()
+            AllVocabsView()
                 .tabItem {
                     Label("คำศัพท์ทั้งหมด", systemImage: "list.bullet")
                 }

@@ -12,7 +12,6 @@ struct DetailView: View {
     @EnvironmentObject private var vm: VocabularyViewModel
     
     var body: some View {
-        
         VStack(alignment:.leading) {
             HStack {
                 Text(vocab)
@@ -36,23 +35,37 @@ struct DetailView: View {
                 })
             }
             .padding(.bottom, 10)
-
-            ScrollView {
-                VStack(spacing: 18) {
-                    if let detail = vm.data {
-                        ForEach(detail, id: \.id) { item in
-                            VStack {
-                                DetailBodyView(item: item, vocab: $vocab)
+            
+            if vm.isBusy {
+                VStack(content: {
+                    ProgressView()
+                        .controlSize(.large)
+                })
+                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+            } else {
+                ScrollView {
+                    VStack(spacing: 18) {
+                        if let detail = vm.data {
+                            if detail.isEmpty {
+                                Notfound
+                            } else {
+                                ForEach(detail, id: \.id) { item in
+                                    VStack {
+                                        DetailBodyView(item: item, vocab: $vocab)
+                                    }
+                                    
+                                }
                             }
-                            
                         }
                     }
                 }
+                
+                 
             }
-            
-            
         }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
         .padding()
+        
         .onAppear(perform: {
             vm.find(vocab: vocab)
         })
@@ -61,6 +74,14 @@ struct DetailView: View {
         }
         
         Spacer()
+    }
+    
+    var Notfound: some View {
+        VStack(content: {
+            Text("Vocab \(vocab) Not found")
+                .font(.title3)
+                .fontWeight(.light)
+        })
     }
 }
 
@@ -106,7 +127,6 @@ struct DetailBodyView: View {
                 }
             }
         }
-        
         .padding(.all, 8)
         .frame(minWidth: 0,
                maxWidth: .infinity,

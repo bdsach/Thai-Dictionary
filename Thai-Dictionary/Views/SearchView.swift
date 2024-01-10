@@ -14,7 +14,7 @@ struct SearchView: View {
     @State var searchText = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(alignment: .leading, spacing: 20) {
                 VStack {
                     Text("พจนานุกรม")
@@ -35,13 +35,9 @@ struct SearchView: View {
                     .onSubmit {
                         isDetailViewActive.toggle()
                     }
-                NavigationLink(
-                    destination: DetailView(vocab: searchText),
-                                    isActive: $isDetailViewActive
-                                ) {
-                                    EmptyView()
-                                }
-                                .hidden()
+                    .navigationDestination(isPresented: $isDetailViewActive) {
+                        DetailView(vocab: searchText)
+                    }
 
                 Text("คำค้นยอดฮิต")
                     .font(.title.bold())
@@ -68,4 +64,5 @@ struct SearchView: View {
 
 #Preview {
     SearchView()
+        .environmentObject(VocabularyViewModel())
 }

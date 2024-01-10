@@ -15,19 +15,36 @@ struct AllVocabsView: View {
 
         NavigationView(content: {
             List {
-//                ForEach(vm.thaiWords, id: \.word) { item in
-//                    NavigationLink {
-//                        DetailView(vocab: item.word)
-//                    } label: {
-//                        Text(item.word)
-//                    }
-//                }
+                if vm.isBusy {
+                    ProgressView()
+                } else {
+                    if let vocabs = vm.allvocabs {
+                        ForEach(vocabs.data, id: \.self) { item in
+                            NavigationLink {
+                                DetailView(vocab: item)
+                            } label: {
+                                Text(item)
+                            }
+                            .onAppear(){
+                                if (vocabs.data.last == item){
+                                    vm.getAllVocabsNextPage()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .refreshable {
+                print("refresh")
+                vm.currentPage = 1
+                vm.getAllVocab()
             }
             .listStyle(.plain)
             .navigationTitle("คำศัพท์ทั้งหมด")
             .onAppear {
-                vm.allVocab()
+                vm.getAllVocab()
             }
+            .safeAreaPadding(.bottom, 30)
         })
     }
     
