@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AllWordsView: View {
+struct AllVocabsView: View {
     @State private var keyword = ""
     @EnvironmentObject private var vm: VocabularyViewModel
     
@@ -25,11 +25,14 @@ struct AllWordsView: View {
             }
             .listStyle(.plain)
             .navigationTitle("คำศัพท์ทั้งหมด")
+            .onAppear {
+                vm.allVocab()
+            }
         })
     }
     
 }
 
 #Preview {
-    AllWordsView()
+    AllVocabsView()
 }
